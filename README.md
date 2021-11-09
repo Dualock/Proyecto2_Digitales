@@ -17,4 +17,6 @@ Agregar plan de trabajo
 
 # Bitácora
 Agregar Link de bitacora
-#Reporte escrito
+
+# Reporte escrito
+Agregar Link al reporte
