@@ -10,9 +10,15 @@ module BancoPruebas;
   	//Param
 	parameter DATA_SIZE = 12 ;
 	parameter MAIN_QUEUE_SIZE = 3;
+	parameter [DATA_SIZE-1:0]  th_almost_full = 7;  //umbral almost full
+	parameter [DATA_SIZE-1:0]	th_almost_empty =  1;//umbral almost empty 
 
 	/*AUTOWIRE*/
 	// Beginning of automatic wires (for undeclared instantiated-module outputs)
+	wire		almost_empty;		// From FIFO_cond of FIFO.v
+	wire		almost_empty_synth;	// From FIFO_estruct of FIFO_synth.v
+	wire		almost_full;		// From FIFO_cond of FIFO.v
+	wire		almost_full_synth;	// From FIFO_estruct of FIFO_synth.v
 	wire		clk;			// From probador of probador_FIFO.v
 	wire [DATA_SIZE-1:0] data_in;		// From probador of probador_FIFO.v
 	wire		error_synth;		// From probador of probador_FIFO.v
@@ -22,12 +28,10 @@ module BancoPruebas;
 	wire		fifo_empty_synth;	// From FIFO_estruct of FIFO_synth.v
 	wire		fifo_error;		// From FIFO_cond of FIFO.v
 	wire		fifo_error_synth;	// From FIFO_estruct of FIFO_synth.v
-	wire		fifo_pause;		// From FIFO_cond of FIFO.v
-	wire		fifo_pause_synth;	// From FIFO_estruct of FIFO_synth.v
+	wire		fifo_full;		// From FIFO_cond of FIFO.v
+	wire		fifo_full_synth;	// From FIFO_estruct of FIFO_synth.v
 	wire		read;			// From probador of probador_FIFO.v
 	wire		reset_L;		// From probador of probador_FIFO.v
-	wire [DATA_SIZE-1:0] th_almost_empty;	// From probador of probador_FIFO.v
-	wire [DATA_SIZE-1:0] th_almost_full;	// From probador of probador_FIFO.v
 	wire		write;			// From probador of probador_FIFO.v
 	// End of automatics
 
@@ -38,32 +42,32 @@ module BancoPruebas;
     FIFO FIFO_cond(/*AUTOINST*/
 		   // Outputs
 		   .fifo_empty		(fifo_empty),
-		   .fifo_pause		(fifo_pause),
 		   .fifo_error		(fifo_error),
+		   .almost_full		(almost_full),
+		   .almost_empty	(almost_empty),
+		   .fifo_full		(fifo_full),
 		   .fifo_data_out	(fifo_data_out[DATA_SIZE-1:0]),
 		   // Inputs
 		   .reset_L		(reset_L),
 		   .clk			(clk),
 		   .read		(read),
 		   .write		(write),
-		   .data_in		(data_in[DATA_SIZE-1:0]),
-		   .th_almost_full	(th_almost_full[DATA_SIZE-1:0]),
-		   .th_almost_empty	(th_almost_empty[DATA_SIZE-1:0]));
+		   .data_in		(data_in[DATA_SIZE-1:0]));
 
     //Descripcion estructural
     FIFO_synth FIFO_estruct(/*AUTOINST*/
 			    // Outputs
+			    .almost_empty_synth	(almost_empty_synth),
+			    .almost_full_synth	(almost_full_synth),
 			    .fifo_data_out_synth(fifo_data_out_synth[11:0]),
 			    .fifo_empty_synth	(fifo_empty_synth),
 			    .fifo_error_synth	(fifo_error_synth),
-			    .fifo_pause_synth	(fifo_pause_synth),
+			    .fifo_full_synth	(fifo_full_synth),
 			    // Inputs
 			    .clk		(clk),
 			    .data_in		(data_in[11:0]),
 			    .read		(read),
 			    .reset_L		(reset_L),
-			    .th_almost_empty	(th_almost_empty[11:0]),
-			    .th_almost_full	(th_almost_full[11:0]),
 			    .write		(write));
 
     // Probador: generador de senales y monitor
@@ -74,8 +78,6 @@ module BancoPruebas;
 			   .read		(read),
 			   .write		(write),
 			   .data_in		(data_in[DATA_SIZE-1:0]),
-			   .th_almost_full	(th_almost_full[DATA_SIZE-1:0]),
-			   .th_almost_empty	(th_almost_empty[DATA_SIZE-1:0]),
 			   .error_synth		(error_synth),
 			   // Inputs
 			   .fifo_empty		(fifo_empty),
@@ -84,8 +86,12 @@ module BancoPruebas;
 			   .fifo_data_out_synth	(fifo_data_out_synth[DATA_SIZE-1:0]),
 			   .fifo_error		(fifo_error),
 			   .fifo_error_synth	(fifo_error_synth),
-			   .fifo_pause		(fifo_pause),
-			   .fifo_pause_synth	(fifo_pause_synth));
+			   .almost_full		(almost_full),
+			   .almost_full_synth	(almost_full_synth),
+			   .almost_empty	(almost_empty),
+			   .almost_empty_synth	(almost_empty_synth),
+			   .fifo_full		(fifo_full),
+			   .fifo_full_synth	(fifo_full_synth));
 
 endmodule
 

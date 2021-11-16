@@ -21,8 +21,11 @@ sintesis_FIFO :
 	sed -i 's/FIFO/FIFO_synth/g' $(SYNTH)
 	sed -i 's/fifo_data_out/fifo_data_out_synth/g' $(SYNTH)
 	sed -i 's/fifo_empty/fifo_empty_synth/g' $(SYNTH)
-	sed -i 's/fifo_pause/fifo_pause_synth/g' $(SYNTH)
 	sed -i 's/fifo_error/fifo_error_synth/g' $(SYNTH)
+	sed -i 's/fifo_full/fifo_full_synth/g' $(SYNTH)
+	sed -i 's/almost_full/almost_full_synth/g' $(SYNTH)
+	sed -i 's/almost_empty/almost_empty_synth/g' $(SYNTH)
+	
 exe_FIFO:
 #Compilar:
 	@echo "Realizando auto-instanciación..."
