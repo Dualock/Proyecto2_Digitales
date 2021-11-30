@@ -32,7 +32,7 @@ $ cd trans_layer && make
 | Plan de pruebas | Todos | 1 | 9/11/2021 | Listo |
 | Investigacion | Jose | 3 | 27/11/2021 | Listo |
 | Memoria | Dualock - Mauricio | 3 | 9/11/2021 | Funcional 100% (Conductual + Estructural)|
-| FIFO | Moisés | Dualock - Mauricio | 6 | 9/11/2021 | Funcional 100% (Conductual + Estructural)|
+| FIFO | Dualock - Mauricio | 6 | 9/11/2021 | Funcional 100% (Conductual + Estructural)|
 | Arbitro 1 | Juan Pablo - Mauricio | 6 | 18/11/2021 | Funcional 100% (Conductual + Estructural)|
 | Arbitro 2 | Juan Pablo - Mauricio | 6 | 18/11/2021 | Funcional 100% (Conductual + Estructural)|
 | Contadores | Jose Todos | 6 | 18/11/2021 | Funcional 100% (Conductual + Estructural)|
