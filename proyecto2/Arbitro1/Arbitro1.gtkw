@@ -1,0 +1,72 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Fri Nov 19 05:08:06 2021
+[*]
+[dumpfile] "/home/dualock/Desktop/proy2/Arbitro1/verificacion_arbitro1.vcd"
+[dumpfile_mtime] "Fri Nov 19 05:02:55 2021"
+[dumpfile_size] 54451
+[savefile] "/home/dualock/Desktop/proy2/Arbitro1/Arbitro1.gtkw"
+[timestart] 0
+[size] 1299 648
+[pos] -51 -1
+*-11.676189 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 223
+[signals_width] 180
+[sst_expanded] 1
+[sst_vpaned_height] 169
+@28
+BancoPruebas.arbitro1_cond.clk
+@22
+[color] 5
+BancoPruebas.arbitro1_cond.cont0[4:0]
+[color] 5
+BancoPruebas.arbitro1_cond.cont1[4:0]
+[color] 5
+BancoPruebas.arbitro1_cond.cont2[4:0]
+[color] 5
+BancoPruebas.arbitro1_cond.cont3[4:0]
+[color] 3
+BancoPruebas.arbitro1_cond.data_in[11:0]
+@28
+[color] 3
+BancoPruebas.arbitro1_cond.dest[2:0]
+@22
+[color] 6
+BancoPruebas.arbitro1_cond.data_out[11:0]
+@28
+[color] 2
+BancoPruebas.arbitro1_cond.fifo_af0
+[color] 2
+BancoPruebas.arbitro1_cond.fifo_af1
+[color] 2
+BancoPruebas.arbitro1_cond.fifo_af2
+[color] 2
+BancoPruebas.arbitro1_cond.fifo_af3
+[color] 5
+BancoPruebas.arbitro1_cond.fifo_empty0
+[color] 5
+BancoPruebas.arbitro1_cond.fifo_empty1
+[color] 5
+BancoPruebas.arbitro1_cond.fifo_empty2
+[color] 5
+BancoPruebas.arbitro1_cond.fifo_empty3
+[color] 3
+BancoPruebas.arbitro1_cond.pop0
+[color] 3
+BancoPruebas.arbitro1_cond.pop1
+[color] 3
+BancoPruebas.arbitro1_cond.pop2
+[color] 3
+BancoPruebas.arbitro1_cond.pop3
+[color] 2
+BancoPruebas.arbitro1_cond.push0
+[color] 2
+BancoPruebas.arbitro1_cond.push1
+[color] 2
+BancoPruebas.arbitro1_cond.push2
+[color] 2
+BancoPruebas.arbitro1_cond.push3
+@29
+BancoPruebas.arbitro1_cond.reset_L
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Nov 27 03:09:36 2021
+[*]
+[dumpfile] "/home/lacriux/Digitales2/Proyecto2/FIFO/verificacion_FIFO.vcd"
+[dumpfile_mtime] "Sat Nov 27 03:08:02 2021"
+[dumpfile_size] 177272
+[savefile] "/home/lacriux/Digitales2/Proyecto2/FIFO/FIFO_gtk.gtkw"
+[timestart] 0
+[size] 1366 705
+[pos] -87 -87
+*-12.131661 18600 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[sst_width] 192
+[signals_width] 186
+[sst_expanded] 1
+[sst_vpaned_height] 194
+@28
+BancoPruebas.FIFO_cond.almost_empty
+BancoPruebas.FIFO_cond.almost_full
+BancoPruebas.FIFO_cond.clk
+BancoPruebas.FIFO_cond.count[2:0]
+@22
+BancoPruebas.FIFO_cond.data_in[11:0]
+BancoPruebas.FIFO_cond.data_out[11:0]
+BancoPruebas.FIFO_cond.fifo_data_out[11:0]
+@28
+BancoPruebas.FIFO_cond.fifo_empty
+BancoPruebas.FIFO_cond.fifo_error
+BancoPruebas.FIFO_cond.fifo_full
+BancoPruebas.FIFO_cond.ptr_read[2:0]
+BancoPruebas.FIFO_cond.ptr_write[2:0]
+BancoPruebas.FIFO_cond.read
+BancoPruebas.FIFO_cond.reset_L
+BancoPruebas.FIFO_cond.system_pause
+BancoPruebas.FIFO_cond.th_fifos_almost_empty[2:0]
+BancoPruebas.FIFO_cond.th_fifos_almost_full[2:0]
+BancoPruebas.FIFO_cond.valid
+BancoPruebas.FIFO_cond.write
+[pattern_trace] 1
+[pattern_trace] 0
