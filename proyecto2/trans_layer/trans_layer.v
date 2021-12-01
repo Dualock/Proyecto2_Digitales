@@ -16,7 +16,7 @@ module trans_layer#(//Parametros
     input      [MAIN_QUEUE_SIZE-1:0]   idx,
     input      [MAIN_QUEUE_SIZE-1:0]   th_almost_full, th_almost_empty,
     output     [DATA_SIZE-1:0]         data_out0, data_out1, data_out2, data_out3,
-    output     [5:0]                   data_out_cont,
+    output     [4:0]                   data_out_cont,
     output                             valid_cont
 );
     //Wires internos Arbitro1
@@ -57,7 +57,6 @@ module trans_layer#(//Parametros
     wire		            valid0, valid1, valid2, valid3;			// From fifo_entrada of FIFO.v, ...
 
     //Wires internos contador
-    wire		            valid4, valid5, valid6, valid7;
 
     fsm fsm(
 	    // Outputs
@@ -211,7 +210,6 @@ module trans_layer#(//Parametros
         .fifo_empty		(fifos_empty[5]),
         .almost_full		(fifo_af0_arbitro1),
         .fifo_data_out	(data_out0[DATA_SIZE-1:0]),
-        .valid (valid4),
         // Inputs
         .reset_L		(reset_L),
         .clk			(clk),
@@ -225,7 +223,6 @@ module trans_layer#(//Parametros
         .fifo_empty		(fifos_empty[6]),
         .almost_full		(fifo_af1_arbitro1),
         .fifo_data_out	(data_out1[DATA_SIZE-1:0]),
-        .valid (valid5),
         // Inputs
         .reset_L		(reset_L),
         .clk			(clk),
@@ -239,7 +236,6 @@ module trans_layer#(//Parametros
         .fifo_empty		(fifos_empty[7]),
         .almost_full		(fifo_af2_arbitro1),
         .fifo_data_out	(data_out2[DATA_SIZE-1:0]),
-        .valid (valid6),
         // Inputs
         .reset_L		(reset_L),
         .clk			(clk),
@@ -253,7 +249,6 @@ module trans_layer#(//Parametros
         .fifo_empty		(fifos_empty[8]),
         .almost_full		(fifo_af3_arbitro1),
         .fifo_data_out	(data_out3[DATA_SIZE-1:0]),
-        .valid (valid7),
         // Inputs
         .reset_L		(reset_L),
         .clk			(clk),
@@ -268,11 +263,11 @@ module trans_layer#(//Parametros
         .valid      (valid_cont),
         .data_out   (data_out_cont),
         //Inputs
-        .pop0       (valid4),
-        .pop1       (valid5),
-        .pop2       (valid6),
-        .pop3       (valid7),
-        .pop4       (valid_entrada),
+        .pop0       (pop0),
+        .pop1       (pop1),
+        .pop2       (pop2),
+        .pop3       (pop3),
+        .pop4       (pop_arbitro2),
         .req        (req),
         .clk        (clk),
         .reset_L    (reset_L),

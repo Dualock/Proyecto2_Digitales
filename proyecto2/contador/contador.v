@@ -4,11 +4,10 @@ module contador (
     input req, clk, reset_L, idle,
     input [2:0] idx,
     output reg valid,
-    output reg [5:0] data_out
+    output reg [4:0] data_out
 );
 
-reg [4:0] contador_0, contador_1, contador_2, contador_3;
-reg [5:0] contador_4 ;
+reg [4:0] contador_0, contador_1, contador_2, contador_3, contador_4 ;
 
 // Lógica de conteo de FIFOS
 always @(posedge clk)begin
@@ -41,38 +40,37 @@ always @(posedge clk)begin
 end
 
 // Lógica de lectura de contadores
-always @(*)begin
-    data_out = 5'b0;
-    valid = 0;
+always @(posedge clk)begin
+
     if(!reset_L)begin
-        data_out = 5'b0;
-        valid = 0;
+        data_out <= 5'b0;
+        valid <= 0;
     end
     else begin
-        if((idle == 1) && (req == 1))begin    // IDLE = 0100
+        if(idle ==1 && req ==1)begin    // IDLE = 0100
             if(idx == 3'b000)begin
-                data_out = contador_0;
-                valid = 1;
+                data_out <= contador_0;
+                valid <= 1;
             end
             if(idx == 3'b001)begin
-                data_out = contador_1;
-                valid = 1;
+                data_out <= contador_1;
+                valid <= 1;
             end
             if(idx == 3'b010)begin
-                data_out = contador_2;
-                valid = 1;
+                data_out <= contador_2;
+                valid <= 1;
             end
             if(idx == 3'b011)begin
-                data_out = contador_3;
-                valid = 1;
+                data_out <= contador_3;
+                valid <= 1;
             end
             if(idx == 3'b100)begin
-                data_out = contador_4;
-                valid = 1;
+                data_out <= contador_4;
+                valid <= 1;
             end
         end
         else begin
-            valid = 0;
+            valid <= 0;
         end
     end
 end

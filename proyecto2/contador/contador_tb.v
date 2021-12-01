@@ -11,7 +11,7 @@ module BancoPruebas; // Testbench
 	parameter DATA_SIZE  = 12;			 //Tamaño de bits de entrada
 	parameter MAIN_QUEUE_SIZE  = 3;	// Cantiad de entradas en un fifo
 
-    wire [5:0] data_out, data_out_synth;
+    wire [4:0] data_out, data_out_synth;
     wire valid_c, valid_synth;
     /*AUTOWIRE*/
     // Beginning of automatic wires (for undeclared instantiated-module outputs)

@@ -9,7 +9,7 @@ module probador_contador(
     output reg req, reset_L, idle,
     output reg [2:0] idx,
     input valid_c, valid_synth,
-    input [5:0] data_out, data_out_synth
+    input [4:0] data_out, data_out_synth
 );
 
 initial clk=0;

@@ -155,7 +155,11 @@ module probador_trans_layer #(
         @(posedge clk)
         pop3 = 0;
 
-        repeat (4) @(posedge clk);
+
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
 
         // PRUEBA 4
         // Se provoca un almost full en fifo0 de salida para bloquear al árbitro1
@@ -171,7 +175,10 @@ module probador_trans_layer #(
         @(posedge clk)
         push <= 0;
 
-        repeat (4) @(posedge clk);
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
 
         // Se provoca un almost full en el fifo0 de entrada
         @(posedge clk)
@@ -193,10 +200,7 @@ module probador_trans_layer #(
         pop0 = 1;
         @(posedge clk)
         @(posedge clk)
-        @(posedge clk)
-        @(posedge clk)
         pop0 = 0;
-     
 
         // Se provoca un almost full en el fifo1 de entrada
         @(posedge clk)
@@ -259,42 +263,30 @@ module probador_trans_layer #(
         pop0 = 0;
 
         // Se hace pops en fifo0 de salida hasta limpiar completamente todos los FIFO_0_salida
-
-        repeat(5) @(posedge clk);
-
-        repeat (17) begin
-            @(posedge clk)
-            pop0 = 1;
-            @(posedge clk)
-            @(posedge clk)
-            pop0 = 0;
-            repeat(5) @(posedge clk);
-        end
-
+        @(posedge clk)
+        pop0 = 1;
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
+        @(posedge clk)
         pop0 = 0;
-    
 
         repeat (10) @(posedge clk);
-
-        //PRUEBA 5
-        req = 1;
-        // Se habilita la lectura.
-        // Se leen los 4 primeros contadores y se suman.
-        @(posedge clk)
-        idx = 0;
-        @(posedge clk)
-        idx = idx + 1;
-        @(posedge clk)
-        idx = idx + 1;
-        @(posedge clk)
-        idx = idx + 1;
-        @(posedge clk)
-        idx = idx + 1;
-        @(posedge clk);
-
-        repeat (10) @(posedge clk);
-
-
         $finish;
     end
 

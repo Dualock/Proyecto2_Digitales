@@ -22,8 +22,8 @@ module BancoPruebas;
 	wire [11:0]	data_out2_synth;	// From trans_layer_estruct of trans_layer_synth.v
 	wire [DATA_SIZE-1:0] data_out3;		// From trans_layer_cond of trans_layer.v
 	wire [11:0]	data_out3_synth;	// From trans_layer_estruct of trans_layer_synth.v
-	wire [5:0]	data_out_cont;		// From trans_layer_cond of trans_layer.v
-	wire [5:0]	data_out_cont_synth;	// From trans_layer_estruct of trans_layer_synth.v
+	wire [4:0]	data_out_cont;		// From trans_layer_cond of trans_layer.v
+	wire [4:0]	data_out_cont_synth;	// From trans_layer_estruct of trans_layer_synth.v
 	wire [MAIN_QUEUE_SIZE-1:0] idx;		// From probador of probador_trans_layer.v
 	wire		init;			// From probador of probador_trans_layer.v
 	wire		pop0;			// From probador of probador_trans_layer.v
@@ -46,7 +46,7 @@ module BancoPruebas;
 				 .data_out1		(data_out1[DATA_SIZE-1:0]),
 				 .data_out2		(data_out2[DATA_SIZE-1:0]),
 				 .data_out3		(data_out3[DATA_SIZE-1:0]),
-				 .data_out_cont		(data_out_cont[5:0]),
+				 .data_out_cont		(data_out_cont[4:0]),
 				 .valid_cont		(valid_cont),
 				 // Inputs
 				 .data_in		(data_in[DATA_SIZE-1:0]),
@@ -70,7 +70,7 @@ module BancoPruebas;
 					  .data_out1_synth	(data_out1_synth[11:0]),
 					  .data_out2_synth	(data_out2_synth[11:0]),
 					  .data_out3_synth	(data_out3_synth[11:0]),
-					  .data_out_cont_synth	(data_out_cont_synth[5:0]),
+					  .data_out_cont_synth	(data_out_cont_synth[4:0]),
 					  .valid_cont_synth	(valid_cont_synth),
 					  // Inputs
 					  .clk			(clk),
