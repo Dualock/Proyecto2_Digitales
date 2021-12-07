@@ -1,0 +1,71 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Tue Dec  7 05:38:10 2021
+[*]
+[dumpfile] "/home/dualock/Desktop/git_proy2/Proyecto2_Digitales/proyecto2/Arbitro2/verificacion_arbitro2.vcd"
+[dumpfile_mtime] "Tue Dec  7 05:32:08 2021"
+[dumpfile_size] 28258
+[savefile] "/home/dualock/Desktop/git_proy2/Proyecto2_Digitales/proyecto2/Arbitro2/Resultados.gtkw"
+[timestart] 0
+[size] 1299 648
+[pos] -1 -1
+*-11.074094 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 223
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 169
+@200
+-Input
+@28
+[color] 3
+BancoPruebas.clk
+@22
+[color] 3
+BancoPruebas.data_in[11:0]
+@23
+[color] 3
+BancoPruebas.cont4[4:0]
+@22
+[color] 3
+BancoPruebas.cont4_synth[4:0]
+@28
+[color] 3
+BancoPruebas.fifo_empty
+@200
+-Outputs
+@22
+[color] 7
+BancoPruebas.data_out[11:0]
+[color] 7
+BancoPruebas.data_out_synth[11:0]
+[color] 7
+BancoPruebas.fifo_data_out[11:0]
+@28
+[color] 7
+BancoPruebas.pop
+[color] 7
+BancoPruebas.write
+[color] 7
+BancoPruebas.pop_synth
+[color] 7
+BancoPruebas.push0
+[color] 7
+BancoPruebas.push0_synth
+[color] 7
+BancoPruebas.push1
+[color] 7
+BancoPruebas.push1_synth
+[color] 7
+BancoPruebas.push2
+[color] 7
+BancoPruebas.push2_synth
+[color] 7
+BancoPruebas.push3
+[color] 7
+BancoPruebas.push3_synth
+[color] 7
+BancoPruebas.reset_L
+[color] 7
+BancoPruebas.valid_entrada
+[pattern_trace] 1
+[pattern_trace] 0

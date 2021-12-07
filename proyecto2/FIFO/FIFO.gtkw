@@ -1,0 +1,69 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Tue Dec  7 06:36:49 2021
+[*]
+[dumpfile] "/home/dualock/Desktop/AvanceII_ProyectoII_G04/FIFO/verificacion_FIFO.vcd"
+[dumpfile_mtime] "Tue Nov 16 20:38:58 2021"
+[dumpfile_size] 185411
+[savefile] "/home/dualock/Desktop/AvanceII_ProyectoII_G04/FIFO/FIFO.gtkw"
+[timestart] 12150
+[size] 1299 648
+[pos] -1 -1
+*-11.547780 860 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[sst_width] 223
+[signals_width] 251
+[sst_expanded] 1
+[sst_vpaned_height] 171
+@200
+-Inputs
+@28
+BancoPruebas.clk
+BancoPruebas.reset_L
+@22
+[color] 3
+BancoPruebas.data_in[11:0]
+@28
+[color] 3
+BancoPruebas.write
+[color] 3
+BancoPruebas.read
+@200
+-Flags
+@28
+[color] 2
+BancoPruebas.almost_empty
+[color] 2
+BancoPruebas.almost_empty_synth
+[color] 5
+BancoPruebas.almost_full
+[color] 5
+BancoPruebas.almost_full_synth
+[color] 1
+BancoPruebas.FIFO_cond.system_pause
+@200
+-Outputs
+@22
+[color] 7
+BancoPruebas.fifo_data_out[11:0]
+[color] 7
+BancoPruebas.fifo_data_out_synth[11:0]
+@28
+[color] 7
+BancoPruebas.fifo_empty
+[color] 7
+BancoPruebas.fifo_empty_synth
+[color] 7
+BancoPruebas.fifo_error
+[color] 7
+BancoPruebas.fifo_error_synth
+[color] 7
+BancoPruebas.fifo_full
+[color] 7
+BancoPruebas.fifo_full_synth
+@200
+-Internal Reg
+@28
+BancoPruebas.FIFO_cond.count[2:0]
+[pattern_trace] 1
+[pattern_trace] 0

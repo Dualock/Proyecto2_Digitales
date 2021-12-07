@@ -113,11 +113,13 @@ module FIFO #( //Parametros
 			valid <= 0;
 		end
 		else begin
-			if(system_pause) begin
+			if(system_pause || fifo_error) begin
 				ptr_write <= ptr_write;
 				count <= count;
 				ptr_read <= ptr_read;
-			end
+				fifo_data_out <= 0;
+				valid <= 0;
+            		end
 			else begin
 				if( !fifo_full && !fifo_empty && write && read )begin
 					fifo_data_out <= data_out;
@@ -159,6 +161,7 @@ module FIFO #( //Parametros
 				if(!read && !write) begin
 					valid <= 0;
 				end
+
 		  	end
 		end
 	end

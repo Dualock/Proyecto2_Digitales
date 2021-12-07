@@ -60,53 +60,31 @@ module probador_arbitro1 #(
         reset_L <= 1;
         @(posedge clk)
         @(posedge clk)
-        data_in_below0 <= 'h001;
+        data_in_below0 <= 'h0A0;
+        data_in_below1 <= 'h5B0;
+        data_in_below2  <= 'hAC0;
+        data_in_below3 <= 'hFD0;
         write_0 <= 1;
+        write_1 <= 1;
+        write_2 <= 1;
+        write_3 <= 1;
         // Se escribe 3 veces en p0 inferior
         repeat (3) begin
             @(posedge clk)
             data_in_below0 <= data_in_below0+1;
+            data_in_below1 <= data_in_below1 + 1;
+            data_in_below2  <= data_in_below2 + 1;
+            data_in_below3 <= data_in_below3 + 1;
         end
         @(posedge clk)
         write_0 <= 0;
-        write_1 <= 1;
-        data_in_below1 <= 'h501;
-        repeat (2) begin
-            @(posedge clk)
-            data_in_below1 <= data_in_below1 + 1;
-        end
-        @(posedge clk)
         write_1 <= 0;
-        write_2 <= 1;
-        data_in_below2  <= 'hA01;
-        repeat (1) begin
-            @(posedge clk)
-            data_in_below2  <= data_in_below2 + 1;
-        end
-        @(posedge clk)
         write_2 <= 0;
-        write_3 <= 1;
-        data_in_below3 <= 'hF01;
-        @(posedge clk)
-        fifo_af0 <= 0;
         write_3 <= 0;
-        @(posedge clk)
-        repeat (20) begin
+
+        repeat (30) begin
             @(posedge clk);
         end
-        @(posedge clk)
-        popProbador0 <= 1;
-        popProbador1 <= 1;
-        popProbador2 <= 1;
-        popProbador3 <= 1;
-        @(posedge clk)
-        popProbador0 <= 0;
-        popProbador1 <= 0;
-        popProbador2 <= 0;
-        popProbador3 <= 0;
-
-        repeat (5) @(posedge clk);
-
         $finish;
     end
 
